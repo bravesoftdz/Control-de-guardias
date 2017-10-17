@@ -1,0 +1,390 @@
+object FAdmUsuarios: TFAdmUsuarios
+  Left = 239
+  Height = 419
+  Top = 246
+  Width = 689
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Administración de usuarios'
+  ClientHeight = 419
+  ClientWidth = 689
+  Color = 13428679
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 362
+    Top = -2
+    Width = 691
+    ActivePage = TabSheet1
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Nuevo usuario'
+      ClientHeight = 336
+      ClientWidth = 683
+      OnShow = TabSheet1Show
+      object EUsuario: TEdit
+        Left = 108
+        Height = 21
+        Top = 44
+        Width = 288
+        Font.Style = [fsBold]
+        MaxLength = 15
+        OnExit = EUsuarioExit
+        OnKeyPress = EUsuarioKeyPress
+        OnKeyUp = EUsuarioKeyUp
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label1: TLabel
+        Left = 110
+        Height = 14
+        Top = 28
+        Width = 217
+        Caption = 'Usuario nuevo (mín. 6 / máx. 15 caracteres):'
+        ParentColor = False
+      end
+      object BConsDisp: TButton
+        Left = 433
+        Height = 25
+        Top = 40
+        Width = 147
+        Caption = 'Consultar disponibilidad'
+        Enabled = False
+        OnClick = BConsDispClick
+        TabOrder = 1
+      end
+      object Label2: TLabel
+        Left = 110
+        Height = 14
+        Top = 73
+        Width = 204
+        Caption = 'Contraseña (mín. 8 / máx. 20 caracteres):'
+        ParentColor = False
+      end
+      object EContr1: TEdit
+        Left = 108
+        Height = 21
+        Top = 89
+        Width = 288
+        EchoMode = emPassword
+        Enabled = False
+        MaxLength = 20
+        OnKeyPress = EContr1KeyPress
+        OnKeyUp = EContr1KeyUp
+        PasswordChar = '*'
+        TabOrder = 2
+      end
+      object Label3: TLabel
+        Left = 110
+        Height = 14
+        Top = 117
+        Width = 109
+        Caption = 'Confirmar contraseña:'
+        ParentColor = False
+      end
+      object EContr2: TEdit
+        Left = 108
+        Height = 21
+        Top = 133
+        Width = 288
+        EchoMode = emPassword
+        Enabled = False
+        MaxLength = 20
+        OnKeyPress = EContr2KeyPress
+        OnKeyUp = EContr2KeyUp
+        PasswordChar = '*'
+        TabOrder = 3
+      end
+      object BCrear: TButton
+        Left = 108
+        Height = 29
+        Top = 276
+        Width = 219
+        Caption = 'Crear cuenta de usuario'
+        Enabled = False
+        OnClick = BCrearClick
+        OnKeyPress = BCrearKeyPress
+        TabOrder = 7
+      end
+      object Label5: TLabel
+        Left = 110
+        Height = 14
+        Top = 222
+        Width = 38
+        Caption = 'Cédula:'
+        ParentColor = False
+      end
+      object MECedulaNvo: TMaskEdit
+        Left = 162
+        Height = 21
+        Top = 219
+        Width = 120
+        CharCase = ecNormal
+        MaxLength = 8
+        TabOrder = 5
+        OnChange = MECedulaNvoChange
+        OnExit = MECedulaNvoExit
+        OnKeyPress = MECedulaNvoKeyPress
+        EditMask = '!99999999;0;_'
+        SpaceChar = '_'
+      end
+      object Label6: TLabel
+        Left = 108
+        Height = 14
+        Top = 191
+        Width = 42
+        Caption = 'Nombre:'
+        ParentColor = False
+      end
+      object ENombreNvo: TEdit
+        Left = 162
+        Height = 21
+        Top = 188
+        Width = 418
+        CharCase = ecUppercase
+        MaxLength = 50
+        OnChange = ENombreNvoChange
+        OnExit = ENombreNvoExit
+        OnKeyPress = ENombreNvoKeyPress
+        TabOrder = 4
+      end
+      object Label7: TLabel
+        Left = 302
+        Height = 14
+        Top = 222
+        Width = 36
+        Caption = 'Rango:'
+        ParentColor = False
+      end
+      object CBRango: TComboBox
+        Left = 352
+        Height = 21
+        Top = 217
+        Width = 228
+        ItemHeight = 13
+        Items.Strings = (
+          'SUPERVISOR'
+          'ANALISTA'
+        )
+        OnChange = CBRangoChange
+        OnKeyPress = CBRangoKeyPress
+        Style = csDropDownList
+        TabOrder = 6
+      end
+      object LConfContr: TLabel
+        Left = 433
+        Height = 1
+        Top = 112
+        Width = 1
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LFecha: TLabel
+        Left = 271
+        Height = 14
+        Top = 167
+        Width = 89
+        Caption = 'Fecha de registro:'
+        ParentColor = False
+      end
+      object BCancelar: TButton
+        Left = 431
+        Height = 25
+        Top = 276
+        Width = 75
+        Caption = 'Cancelar'
+        OnClick = BCancelarClick
+        TabOrder = 8
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Administración'
+      ClientHeight = 336
+      ClientWidth = 683
+      OnShow = TabSheet2Show
+      object Label4: TLabel
+        Left = 21
+        Height = 14
+        Top = 28
+        Width = 114
+        Caption = 'Usuarios ya registrados'
+        ParentColor = False
+      end
+      object DBGUsuarios: TDBGrid
+        Left = 20
+        Height = 255
+        Top = 44
+        Width = 211
+        Color = clWindow
+        Columns = <        
+          item
+            ReadOnly = True
+            Title.Alignment = taCenter
+            Title.Caption = 'Identificador de Usuario'
+            Title.Font.Style = [fsBold]
+            FieldName = 'IDUsuario'
+          end>
+        DataSource = DS
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 0
+        OnCellClick = DBGUsuariosCellClick
+        OnKeyUp = DBGUsuariosKeyUp
+      end
+      object Label8: TLabel
+        Left = 254
+        Height = 14
+        Top = 50
+        Width = 42
+        Caption = 'Nombre:'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 254
+        Height = 14
+        Top = 80
+        Width = 38
+        Caption = 'Cédula:'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 429
+        Height = 14
+        Top = 80
+        Width = 36
+        Caption = 'Rango:'
+        ParentColor = False
+      end
+      object Label11: TLabel
+        Left = 453
+        Height = 14
+        Top = 110
+        Width = 68
+        Caption = '¿Está activo?:'
+        ParentColor = False
+      end
+      object EActivo: TEdit
+        Left = 524
+        Height = 21
+        Top = 105
+        Width = 80
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 3
+      end
+      object ChBDesact: TCheckBox
+        Left = 294
+        Height = 17
+        Top = 176
+        Width = 129
+        Caption = 'Desactivar esta cuenta'
+        OnChange = ChBDesactChange
+        OnKeyPress = ChBDesactKeyPress
+        TabOrder = 1
+      end
+      object BAplicar: TButton
+        Left = 446
+        Height = 25
+        Top = 172
+        Width = 129
+        Caption = 'Aplicar'
+        Enabled = False
+        OnClick = BAplicarClick
+        TabOrder = 2
+      end
+      object ENombre: TDBEdit
+        Left = 299
+        Height = 21
+        Top = 43
+        Width = 362
+        DataField = 'Nombre'
+        DataSource = DS
+        ReadOnly = True
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 4
+        TabStop = False
+      end
+      object ECedula: TDBEdit
+        Left = 299
+        Height = 21
+        Top = 75
+        Width = 112
+        DataField = 'Cedula'
+        DataSource = DS
+        ReadOnly = True
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 5
+        TabStop = False
+      end
+      object ERango: TDBEdit
+        Left = 479
+        Height = 21
+        Top = 75
+        Width = 182
+        DataField = 'Rango'
+        DataSource = DS
+        ReadOnly = True
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 6
+        TabStop = False
+      end
+      object DBEdit1: TDBEdit
+        Left = 355
+        Height = 21
+        Top = 105
+        Width = 80
+        DataField = 'FecRegistro'
+        DataSource = DS
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 7
+        TabStop = False
+      end
+      object Label12: TLabel
+        Left = 254
+        Height = 14
+        Top = 110
+        Width = 93
+        Caption = 'Fecha de registro::'
+        ParentColor = False
+      end
+    end
+  end
+  object BSalir: TButton
+    Left = 300
+    Height = 25
+    Top = 376
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 1
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 94
+    top = 369
+  end
+  object DS: TDatasource
+    DataSet = ZQryList
+    left = 41
+    top = 369
+  end
+  object ZQryList: TZQuery
+    Connection = DMod.ZCon
+    SQL.Strings = (
+      'select * from usuario'
+    )
+    Params = <>
+    left = 147
+    top = 369
+  end
+end

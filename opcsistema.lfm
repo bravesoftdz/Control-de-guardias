@@ -1,0 +1,126 @@
+object FOpcSistema: TFOpcSistema
+  Left = 794
+  Height = 296
+  Top = 438
+  Width = 493
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Opciones del sistema'
+  ClientHeight = 296
+  ClientWidth = 493
+  Color = 13428679
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object Label1: TLabel
+    Left = 36
+    Height = 14
+    Top = 22
+    Width = 116
+    Caption = 'Nombre del analista:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ENomAnalista: TEdit
+    Left = 36
+    Height = 21
+    Top = 40
+    Width = 420
+    MaxLength = 40
+    OnExit = ENomAnalistaExit
+    TabOrder = 0
+  end
+  object ENomCooPers: TEdit
+    Left = 36
+    Height = 21
+    Top = 93
+    Width = 420
+    MaxLength = 40
+    OnExit = ENomCooPersExit
+    TabOrder = 1
+  end
+  object Label2: TLabel
+    Left = 36
+    Height = 14
+    Top = 74
+    Width = 208
+    Caption = 'Nombre del coordinador de personal:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ENomDirGen: TEdit
+    Left = 36
+    Height = 21
+    Top = 193
+    Width = 420
+    MaxLength = 40
+    OnExit = ENomDirGenExit
+    TabOrder = 3
+  end
+  object Label3: TLabel
+    Left = 36
+    Height = 14
+    Top = 174
+    Width = 162
+    Caption = 'Nombre del director general:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BGuardar: TButton
+    Left = 169
+    Height = 34
+    Top = 242
+    Width = 155
+    Caption = 'Guardar cambios'
+    Font.Style = [fsBold]
+    OnClick = BGuardarClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object BSalir: TButton
+    Left = 381
+    Height = 25
+    Top = 246
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 5
+  end
+  object Label7: TLabel
+    Left = 36
+    Height = 14
+    Top = 124
+    Width = 206
+    Caption = 'Nombre del supervisor de vigilantes:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ENomSupVig: TEdit
+    Left = 36
+    Height = 21
+    Top = 143
+    Width = 420
+    MaxLength = 40
+    OnExit = ENomCooPersExit
+    TabOrder = 2
+  end
+  object Bevel1: TBevel
+    Left = 11
+    Height = 217
+    Top = 11
+    Width = 470
+    Shape = bsFrame
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 18
+    top = 241
+  end
+end

@@ -1,0 +1,263 @@
+object FCronoVac: TFCronoVac
+  Left = 237
+  Height = 519
+  Top = 148
+  Width = 819
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cronograma de Vacaciones'
+  ClientHeight = 519
+  ClientWidth = 819
+  Color = 13428679
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object BSalir: TButton
+    Left = 720
+    Height = 25
+    Top = 468
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 0
+  end
+  object Label3: TLabel
+    Left = 22
+    Height = 14
+    Top = 24
+    Width = 83
+    Caption = 'Ejercicio fiscal:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object CBEjFiscal: TComboBox
+    Left = 22
+    Height = 21
+    Top = 39
+    Width = 129
+    ItemHeight = 13
+    OnChange = CBEjFiscalChange
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object BConsultar: TButton
+    Left = 519
+    Height = 36
+    Top = 24
+    Width = 119
+    Caption = 'Consultar'
+    Enabled = False
+    Font.Style = [fsBold]
+    OnClick = BConsultarClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object DBGCronoVac: TDBGrid
+    Left = 22
+    Height = 338
+    Top = 96
+    Width = 773
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Nombre'
+        Title.Font.Style = [fsBold]
+        Width = 59
+        FieldName = 'Nombre'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'Cédula'
+        Title.Font.Style = [fsBold]
+        Width = 53
+        FieldName = 'Cedula'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'Cargo'
+        Title.Font.Style = [fsBold]
+        Width = 48
+        FieldName = 'DescrCargo'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'F. Ingreso'
+        Title.Font.Style = [fsBold]
+        Width = 71
+        FieldName = 'FechaIngreso'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'Mes vacación'
+        Title.Font.Style = [fsBold]
+        Width = 91
+        FieldName = 'MesVacacion'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'Días disfrute'
+        Title.Font.Style = [fsBold]
+        Width = 86
+        FieldName = 'TotDiasVac'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'F. Disfrute'
+        Title.Font.Style = [fsBold]
+        Width = 72
+        FieldName = 'FecIniVac'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Observación'
+        Title.Font.Style = [fsBold]
+        Width = 85
+        FieldName = 'Observacion'
+      end>
+    DataSource = DS
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 176
+    Height = 14
+    Top = 24
+    Width = 97
+    Caption = 'Mes de vacación:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object CBMesVac: TComboBox
+    Left = 175
+    Height = 21
+    Top = 39
+    Width = 164
+    DropDownCount = 12
+    ItemHeight = 13
+    Items.Strings = (
+      'ENERO'
+      'FEBRERO'
+      'MARZO'
+      'ABRIL'
+      'MAYO'
+      'JUNIO'
+      'JULIO'
+      'AGOSTO'
+      'SEPTIEMBRE'
+      'OCTUBRE'
+      'NOVIEMBRE'
+      'DICIEMBRE'
+    )
+    OnChange = CBEjFiscalChange
+    Style = csDropDownList
+    TabOrder = 4
+  end
+  object BImprimir: TButton
+    Left = 356
+    Height = 34
+    Top = 464
+    Width = 107
+    Caption = 'Imprimir'
+    Enabled = False
+    Font.Style = [fsBold]
+    OnClick = BImprimirClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object ChBTodos: TCheckBox
+    Left = 361
+    Height = 17
+    Top = 40
+    Width = 111
+    Caption = 'Todos los meses'
+    Font.Style = [fsBold]
+    OnChange = ChBTodosChange
+    ParentFont = False
+    TabOrder = 6
+  end
+  object RGReporte: TRadioGroup
+    Left = 160
+    Height = 47
+    Top = 454
+    Width = 176
+    AutoFill = True
+    Caption = ' Reporte '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 29
+    ClientWidth = 172
+    Columns = 2
+    ItemIndex = 0
+    Items.Strings = (
+      'General'
+      'Simplificado'
+    )
+    ParentFont = False
+    TabOrder = 7
+  end
+  object Bevel1: TBevel
+    Left = 10
+    Height = 65
+    Top = 10
+    Width = 798
+    Shape = bsFrame
+  end
+  object Bevel2: TBevel
+    Left = 10
+    Height = 362
+    Top = 85
+    Width = 798
+    Shape = bsFrame
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 84
+    top = 355
+  end
+  object DS: TDatasource
+    DataSet = ZQuery
+    left = 128
+    top = 355
+  end
+  object frReporte: TfrReport
+    Dataset = frDBDSet
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    left = 491
+    top = 354
+    ReportForm = {
+      19000000
+    }
+  end
+  object frDBDSet: TfrDBDataSet
+    DataSet = ZQuery
+    left = 531
+    top = 353
+  end
+  object ZQrConfig: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 587
+    top = 352
+  end
+end

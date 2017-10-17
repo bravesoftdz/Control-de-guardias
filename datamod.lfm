@@ -1,0 +1,22 @@
+object DMod: TDMod
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 128
+  HorizontalOffset = 1058
+  VerticalOffset = 622
+  Width = 172
+  object ZCon: TZConnection
+    UTF8StringsAsWideField = False
+    PreprepareSQL = False
+    Catalog = 'proyecto'
+    Properties.Strings = (
+      'PreprepareSQL='
+    )
+    Port = 0
+    Database = 'proyecto'
+    User = 'root'
+    Protocol = 'mysql'
+    left = 25
+    top = 20
+  end
+end

@@ -1,0 +1,55 @@
+object FCargos: TFCargos
+  Left = 234
+  Height = 311
+  Top = 157
+  Width = 440
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Cargos'
+  ClientHeight = 311
+  ClientWidth = 440
+  Position = poScreenCenter
+  LCLVersion = '0.9.30'
+  object Edit1: TEdit
+    Left = 80
+    Height = 21
+    Top = 25
+    Width = 240
+    CharCase = ecUppercase
+    MaxLength = 50
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 32
+    Height = 14
+    Top = 32
+    Width = 34
+    Caption = 'Cargo:'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 328
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Agregar'
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 32
+    Height = 176
+    Top = 72
+    Width = 371
+    Color = clWindow
+    Columns = <>
+    TabOrder = 2
+  end
+  object Button2: TButton
+    Left = 192
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Salir'
+    TabOrder = 3
+  end
+end

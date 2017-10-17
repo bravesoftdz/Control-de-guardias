@@ -1,0 +1,525 @@
+object FContrGuardias: TFContrGuardias
+  Left = 189
+  Height = 723
+  Top = 130
+  Width = 1027
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Control de guardias'
+  ClientHeight = 723
+  ClientWidth = 1027
+  Color = 13428679
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  PopupMenu = PMenu
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object BSalir: TButton
+    Left = 929
+    Height = 25
+    Top = 26
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 6
+  end
+  object CBMes: TComboBox
+    Left = 118
+    Height = 21
+    Top = 36
+    Width = 100
+    ItemHeight = 13
+    ItemIndex = 0
+    Items.Strings = (
+      'ENERO'
+      'FEBRERO'
+      'MARZO'
+      'ABRIL'
+      'MAYO'
+      'JUNIO'
+      'JULIO'
+      'AGOSTO'
+      'SEPTIEMBRE'
+      'OCTUBRE'
+      'NOVIEMBRE'
+      'DICIEMBRE'
+    )
+    OnChange = CBMesChange
+    Style = csDropDownList
+    TabOrder = 1
+    Text = 'ENERO'
+  end
+  object SEAnio: TSpinEdit
+    Left = 22
+    Height = 21
+    Top = 36
+    Width = 54
+    MaxValue = 2030
+    MinValue = 2005
+    OnChange = SEAnioChange
+    TabOrder = 0
+    Value = 2010
+  end
+  object Label1: TLabel
+    Left = 22
+    Height = 14
+    Top = 20
+    Width = 26
+    Caption = 'Año:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 118
+    Height = 14
+    Top = 20
+    Width = 27
+    Caption = 'Mes:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 246
+    Height = 14
+    Top = 20
+    Width = 91
+    Caption = 'Tipo de guardia:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object CBGuardia: TComboBox
+    Left = 246
+    Height = 21
+    Top = 36
+    Width = 100
+    Enabled = False
+    ItemHeight = 13
+    ItemIndex = 0
+    Items.Strings = (
+      'Diurna'
+      'Nocturna'
+      'Mixta'
+    )
+    OnChange = CBGuardiaChange
+    Style = csDropDownList
+    TabOrder = 2
+    Text = 'Diurna'
+  end
+  object SGGuardias: TStringGrid
+    Left = 22
+    Height = 527
+    Top = 89
+    Width = 982
+    Align = alCustom
+    ColCount = 33
+    Columns = <    
+      item
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Caption = 'Nombre'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 200
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Caption = 'Title'
+        Title.Color = clInactiveCaptionText
+        Title.Font.Style = [fsBold]
+        Width = 37
+      end>
+    DefaultColWidth = 0
+    DefaultRowHeight = 20
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goSmoothScroll]
+    RowCount = 1
+    TabOrder = 4
+    OnClick = SGGuardiasClick
+  end
+  object BCrear: TButton
+    Left = 390
+    Height = 37
+    Top = 20
+    Width = 179
+    Caption = 'Crear Control de guardias'
+    Enabled = False
+    Font.Style = [fsBold]
+    OnClick = BCrearClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object MmObs: TMemo
+    Left = 166
+    Height = 51
+    Top = 647
+    Width = 838
+    Lines.Strings = (
+      'MmObs'
+    )
+    MaxLength = 300
+    TabOrder = 5
+  end
+  object Label4: TLabel
+    Left = 38
+    Height = 32
+    Top = 647
+    Width = 120
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Observaciones (máx. 300 caracteres):'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Bevel1: TBevel
+    Left = 10
+    Height = 61
+    Top = 8
+    Width = 1007
+    Shape = bsFrame
+  end
+  object Bevel2: TBevel
+    Left = 10
+    Height = 552
+    Top = 77
+    Width = 1007
+    Shape = bsFrame
+  end
+  object Bevel3: TBevel
+    Left = 10
+    Height = 77
+    Top = 637
+    Width = 1007
+    Shape = bsFrame
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    SQL.Strings = (
+      'select Cedula, Concat(Apellidos,'', '',Nombres) NomCompl from personal order by NomCompl asc'
+    )
+    Params = <>
+    left = 808
+    top = 145
+  end
+  object ZQueryX: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 856
+    top = 145
+  end
+  object ZQrTEx: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 905
+    top = 145
+  end
+  object PMenu: TPopupMenu
+    left = 664
+    top = 145
+    object PMIDiurna: TMenuItem
+      Caption = 'Diurna'
+      OnClick = PMIDiurnaClick
+    end
+    object PMINocturna: TMenuItem
+      Caption = 'Nocturna'
+      OnClick = PMINocturnaClick
+    end
+    object PMIMixta: TMenuItem
+      Caption = 'Mixta'
+      OnClick = PMIMixtaClick
+    end
+    object MenuItem3: TMenuItem
+      Caption = '-'
+    end
+    object PMILimpiaLinea: TMenuItem
+      Caption = 'Limpiar linea completa'
+      OnClick = PMILimpiaLineaClick
+    end
+    object PMILimpiarTodo: TMenuItem
+      Caption = 'Limpiar todo'
+      OnClick = PMILimpiarTodoClick
+    end
+  end
+  object ZQrTmp: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 759
+    top = 145
+  end
+end

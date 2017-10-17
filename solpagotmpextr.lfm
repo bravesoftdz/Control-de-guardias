@@ -1,0 +1,149 @@
+object FSolPagoTmpExtr: TFSolPagoTmpExtr
+  Left = 822
+  Height = 388
+  Top = 430
+  Width = 388
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Solicitud de pago tiempo extraordinario'
+  ClientHeight = 388
+  ClientWidth = 388
+  Color = 13428679
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object BSalir: TButton
+    Left = 275
+    Height = 25
+    Top = 338
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 38
+    Height = 14
+    Top = 66
+    Width = 48
+    Caption = 'Nombre:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object SEAnio: TSpinEdit
+    Left = 78
+    Height = 21
+    Top = 31
+    Width = 54
+    MaxValue = 2030
+    MinValue = 2005
+    TabOrder = 1
+    Value = 2010
+  end
+  object CBMes: TComboBox
+    Left = 250
+    Height = 21
+    Top = 31
+    Width = 100
+    ItemHeight = 13
+    ItemIndex = 0
+    Items.Strings = (
+      'ENERO'
+      'FEBRERO'
+      'MARZO'
+      'ABRIL'
+      'MAYO'
+      'JUNIO'
+      'JULIO'
+      'AGOSTO'
+      'SEPTIEMBRE'
+      'OCTUBRE'
+      'NOVIEMBRE'
+      'DICIEMBRE'
+    )
+    Style = csDropDownList
+    TabOrder = 2
+    Text = 'ENERO'
+  end
+  object Label1: TLabel
+    Left = 38
+    Height = 14
+    Top = 34
+    Width = 26
+    Caption = 'Año:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 214
+    Height = 14
+    Top = 34
+    Width = 27
+    Caption = 'Mes:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BImprimir: TButton
+    Left = 134
+    Height = 30
+    Top = 336
+    Width = 120
+    Caption = 'Imprimir'
+    Font.Style = [fsBold]
+    OnClick = BImprimirClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object LBTrabaj: TListBox
+    Left = 38
+    Height = 208
+    Top = 86
+    Width = 312
+    ItemHeight = 0
+    TabOrder = 4
+  end
+  object Bevel1: TBevel
+    Left = 13
+    Height = 308
+    Top = 12
+    Width = 362
+    Shape = bsFrame
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 148
+    top = 168
+  end
+  object frRpt: TfrReport
+    Dataset = frDBDSet
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    left = 200
+    top = 168
+    ReportForm = {
+      19000000
+    }
+  end
+  object frDBDSet: TfrDBDataSet
+    DataSet = ZQuery
+    left = 260
+    top = 168
+  end
+  object ZQrTmp: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 96
+    top = 168
+  end
+end

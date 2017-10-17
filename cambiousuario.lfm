@@ -1,0 +1,107 @@
+object FCambioUsuario: TFCambioUsuario
+  Left = 901
+  Height = 239
+  Top = 495
+  Width = 369
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cambio de usuario'
+  ClientHeight = 239
+  ClientWidth = 369
+  Color = 13428679
+  KeyPreview = True
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object Label1: TLabel
+    Left = 24
+    Height = 14
+    Top = 60
+    Width = 41
+    Caption = 'Usuario:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 14
+    Top = 104
+    Width = 61
+    Caption = 'Contraseña:'
+    ParentColor = False
+  end
+  object EUsuario: TEdit
+    Left = 94
+    Height = 21
+    Top = 56
+    Width = 250
+    MaxLength = 15
+    OnKeyPress = EUsuarioKeyPress
+    OnKeyUp = EUsuarioKeyUp
+    TabOrder = 0
+  end
+  object EContrasena: TEdit
+    Left = 94
+    Height = 21
+    Top = 101
+    Width = 250
+    EchoMode = emPassword
+    Enabled = False
+    MaxLength = 20
+    OnKeyPress = EContrasenaKeyPress
+    OnKeyUp = EContrasenaKeyUp
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object BAceptar: TButton
+    Left = 90
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Aceptar'
+    Enabled = False
+    OnClick = BAceptarClick
+    TabOrder = 3
+  end
+  object CBSalir: TCheckBox
+    Left = 120
+    Height = 17
+    Top = 144
+    Width = 129
+    Caption = 'Salir de la sesión actual'
+    OnChange = CBSalirChange
+    TabOrder = 2
+  end
+  object LUsrActivo: TLabel
+    Left = 22
+    Height = 14
+    Top = 17
+    Width = 324
+    Alignment = taCenter
+    AutoSize = False
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BSalir: TButton
+    Left = 204
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 4
+  end
+  object Bevel1: TBevel
+    Left = 9
+    Height = 167
+    Top = 9
+    Width = 351
+    Shape = bsFrame
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 27
+    top = 184
+  end
+end

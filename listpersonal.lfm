@@ -1,0 +1,255 @@
+object FListPersonal: TFListPersonal
+  Left = 458
+  Height = 478
+  Top = 207
+  Width = 806
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Listado del Personal'
+  ClientHeight = 478
+  ClientWidth = 806
+  Color = 13428679
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object DBGPersonal: TDBGrid
+    Left = 20
+    Height = 368
+    Top = 19
+    Width = 766
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'CEDULA'
+        Title.Font.Style = [fsBold]
+        Width = 58
+        FieldName = 'Cedula'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'NOMBRE COMPLETO'
+        Title.Font.Style = [fsBold]
+        Width = 123
+        FieldName = 'NomCompl'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'FECHA INGRESO'
+        Title.Font.Style = [fsBold]
+        Width = 102
+        FieldName = 'FechaIngreso'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'CARGO'
+        Title.Font.Style = [fsBold]
+        Width = 54
+        FieldName = 'DescrCargo'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = '¿ES FIJO?'
+        Title.Font.Style = [fsBold]
+        Width = 68
+        FieldName = 'PersFijo'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'UBIC. FISICA'
+        Title.Font.Style = [fsBold]
+        Width = 86
+        FieldName = 'DescrZona'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'SALARIO (D)'
+        Title.Font.Style = [fsBold]
+        Width = 86
+        FieldName = 'SalarioDia'
+        DisplayFormat = '####0.00'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'ESTATUS'
+        Title.Font.Style = [fsBold]
+        Width = 65
+        FieldName = 'DescrStatus'
+      end>
+    DataSource = DS
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+    TabOrder = 0
+  end
+  object BImprimir: TButton
+    Left = 349
+    Height = 34
+    Top = 409
+    Width = 108
+    Caption = 'Imprimir'
+    Font.Style = [fsBold]
+    OnClick = BImprimirClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object BSalir: TButton
+    Left = 711
+    Height = 25
+    Top = 413
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 2
+  end
+  object SBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 455
+    Width = 806
+    Panels = <    
+      item
+        Width = 200
+      end>
+    SimplePanel = False
+  end
+  object Bevel1: TBevel
+    Left = 9
+    Height = 388
+    Top = 9
+    Width = 788
+    Shape = bsFrame
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    SQL.Strings = (
+      'select pr.Cedula, Concat(pr.Apellidos,'', '',pr.Nombres) NomCompl, pr.FechaIngreso, cg.DescrCargo, pr.PersFijo, zn.DescrZona, SalarioDia, st.DescrStatus '
+      'from personal pr,cargo cg,zona zn,status st'
+      'where pr.CodCargo=cg.CodCargo and pr.CodZona=zn.CodZona and pr.CodStatus=st.CodStatus'
+      'order by NomCompl asc'
+    )
+    Params = <>
+    left = 80
+    top = 408
+    object ZQueryCedula: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Cedula'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object ZQueryNomCompl: TStringField
+      DisplayWidth = 82
+      FieldKind = fkData
+      FieldName = 'NomCompl'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 82
+    end
+    object ZQueryFechaIngreso: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FechaIngreso'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQueryDescrCargo: TStringField
+      DisplayWidth = 50
+      FieldKind = fkData
+      FieldName = 'DescrCargo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object ZQueryPersFijo: TStringField
+      DisplayWidth = 2
+      FieldKind = fkData
+      FieldName = 'PersFijo'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object ZQueryDescrZona: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'DescrZona'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQuerySalarioDia: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SalarioDia'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 22
+    end
+    object ZQueryDescrStatus: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DescrStatus'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+  end
+  object DS: TDatasource
+    DataSet = ZQuery
+    left = 128
+    top = 408
+  end
+  object frRep: TfrReport
+    Dataset = frDBDSet
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    left = 174
+    top = 408
+    ReportForm = {
+      19000000
+    }
+  end
+  object frDBDSet: TfrDBDataSet
+    DataSet = ZQuery
+    left = 222
+    top = 408
+  end
+  object ZQrConf: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 272
+    top = 408
+  end
+end

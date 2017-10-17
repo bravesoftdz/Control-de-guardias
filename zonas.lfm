@@ -1,0 +1,248 @@
+object FZonas: TFZonas
+  Left = 234
+  Height = 346
+  Top = 158
+  Width = 465
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cargos / Zonas'
+  ClientHeight = 346
+  ClientWidth = 465
+  Color = 13428679
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '0.9.30'
+  object BSalir: TButton
+    Left = 192
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 0
+  end
+  object PC1: TPageControl
+    Left = 0
+    Height = 304
+    Top = 0
+    Width = 467
+    ActivePage = TSCargos
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 1
+    OnChange = PC1Change
+    object TSCargos: TTabSheet
+      Caption = 'Cargos'
+      ClientHeight = 278
+      ClientWidth = 459
+      ImageIndex = 3
+      object ECargo: TEdit
+        Left = 80
+        Height = 21
+        Top = 25
+        Width = 228
+        CharCase = ecUppercase
+        MaxLength = 50
+        OnKeyUp = ECargoKeyUp
+        TabOrder = 0
+      end
+      object Label1: TLabel
+        Left = 32
+        Height = 14
+        Top = 32
+        Width = 34
+        Caption = 'Cargo:'
+        ParentColor = False
+      end
+      object BAgregCargo: TButton
+        Left = 337
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Agregar'
+        Enabled = False
+        OnClick = BAgregCargoClick
+        TabOrder = 1
+      end
+      object DBGCargos: TDBGrid
+        Left = 32
+        Height = 176
+        Top = 72
+        Width = 380
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'CARGOS'
+            Title.Color = 15591128
+            Title.Font.Style = [fsBold]
+            Width = 61
+            FieldName = 'DescrCargo'
+          end>
+        DataSource = DS
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+        ParentFont = False
+        TabOrder = 2
+      end
+    end
+    object TSStatus: TTabSheet
+      Caption = 'Status'
+      ClientHeight = 278
+      ClientWidth = 459
+      object EStatus: TEdit
+        Left = 80
+        Height = 21
+        Top = 25
+        Width = 228
+        CharCase = ecUppercase
+        MaxLength = 10
+        OnKeyUp = EStatusKeyUp
+        TabOrder = 0
+      end
+      object Label4: TLabel
+        Left = 32
+        Height = 14
+        Top = 32
+        Width = 36
+        Caption = 'Status:'
+        ParentColor = False
+      end
+      object BAgregStatus: TButton
+        Left = 337
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Agregar'
+        Enabled = False
+        OnClick = BAgregStatusClick
+        TabOrder = 1
+      end
+      object DBGStatus: TDBGrid
+        Left = 32
+        Height = 176
+        Top = 72
+        Width = 380
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'ESTATUS'
+            Title.Color = 15591128
+            Title.Font.Style = [fsBold]
+            Width = 65
+            FieldName = 'DescrStatus'
+          end>
+        DataSource = DS
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+        TabOrder = 2
+      end
+    end
+    object TSZonas: TTabSheet
+      Caption = 'Zonas'
+      ClientHeight = 278
+      ClientWidth = 459
+      object Label2: TLabel
+        Left = 32
+        Height = 14
+        Top = 32
+        Width = 29
+        Caption = 'Zona:'
+        ParentColor = False
+      end
+      object EZona: TEdit
+        Left = 80
+        Height = 21
+        Top = 25
+        Width = 228
+        CharCase = ecUppercase
+        MaxLength = 50
+        OnKeyUp = EZonaKeyUp
+        TabOrder = 0
+      end
+      object DBGZonas: TDBGrid
+        Left = 32
+        Height = 176
+        Top = 72
+        Width = 380
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'ZONAS'
+            Title.Color = 15591128
+            Title.Font.Style = [fsBold]
+            Width = 52
+            FieldName = 'DescrZona'
+          end>
+        DataSource = DS
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+        TabOrder = 2
+      end
+      object BAgregZona: TButton
+        Left = 337
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Agregar'
+        Enabled = False
+        OnClick = BAgregZonaClick
+        TabOrder = 1
+      end
+    end
+  end
+  object TSZonas1: TTabSheet
+    Caption = 'Zonas'
+    ClientHeight = 35584
+    ClientWidth = 58752
+    object Label3: TLabel
+      Left = 32
+      Height = 14
+      Top = 32
+      Width = 29
+      Caption = 'Zona:'
+      ParentColor = False
+    end
+    object EZona1: TEdit
+      Left = 80
+      Height = 21
+      Top = 25
+      Width = 228
+      CharCase = ecUppercase
+      MaxLength = 50
+      TabOrder = 0
+    end
+    object DBGZonas1: TDBGrid
+      Left = 32
+      Height = 176
+      Top = 72
+      Width = 371
+      Color = clWindow
+      Columns = <>
+      DataSource = DS
+      TabOrder = 2
+    end
+    object BAgregZona1: TButton
+      Left = 328
+      Height = 25
+      Top = 24
+      Width = 75
+      Caption = 'Agregar'
+      OnClick = BAgregZonaClick
+      TabOrder = 1
+    end
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    SQL.Strings = (
+      'select DescrCargo from Cargo order by DescrCargo asc'
+    )
+    Params = <>
+    left = 397
+    top = 313
+  end
+  object DS: TDatasource
+    DataSet = ZQuery
+    left = 326
+    top = 310
+  end
+end

@@ -1,0 +1,129 @@
+object FEjercFiscal: TFEjercFiscal
+  Left = 364
+  Height = 269
+  Top = 399
+  Width = 419
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Ejercicio fiscal'
+  ClientHeight = 269
+  ClientWidth = 419
+  Color = 13428679
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object GroupBox1: TGroupBox
+    Left = 11
+    Height = 201
+    Top = 9
+    Width = 217
+    Caption = ' Generar ejercicio fiscal '
+    ClientHeight = 183
+    ClientWidth = 213
+    TabOrder = 0
+    object SEAnio1: TSpinEdit
+      Left = 23
+      Height = 24
+      Top = 32
+      Width = 71
+      Font.Height = -13
+      MaxValue = 2030
+      MinValue = 2005
+      OnChange = SEAnio1Change
+      OnKeyPress = SEAnio1KeyPress
+      ParentFont = False
+      TabOrder = 0
+      Value = 2005
+    end
+    object EAnio2: TEdit
+      Left = 119
+      Height = 24
+      Top = 32
+      Width = 67
+      Alignment = taCenter
+      Font.Height = -13
+      ParentFont = False
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      Left = 23
+      Height = 14
+      Top = 8
+      Width = 63
+      Caption = 'Desde año:'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 119
+      Height = 14
+      Top = 8
+      Width = 61
+      Caption = 'Hasta año:'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object BGenerar: TButton
+      Left = 23
+      Height = 41
+      Top = 96
+      Width = 163
+      Caption = 'Generar ejercicio fiscal'
+      Font.Style = [fsBold]
+      OnClick = BGenerarClick
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 238
+    Height = 201
+    Top = 9
+    Width = 169
+    Caption = ' Existentes '
+    ClientHeight = 183
+    ClientWidth = 165
+    TabOrder = 1
+    object LBExist: TListBox
+      Left = 21
+      Height = 144
+      Top = 8
+      Width = 124
+      Font.Height = -16
+      ItemHeight = 0
+      ParentFont = False
+      Sorted = True
+      TabOrder = 0
+    end
+  end
+  object BSalir: TButton
+    Left = 172
+    Height = 25
+    Top = 228
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 2
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 24
+    top = 224
+  end
+  object ZQrExist: TZQuery
+    Connection = DMod.ZCon
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 81
+    top = 224
+  end
+end

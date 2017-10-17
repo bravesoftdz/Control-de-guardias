@@ -1,0 +1,132 @@
+object FCtrlGuardMens: TFCtrlGuardMens
+  Left = 426
+  Height = 153
+  Top = 278
+  Width = 385
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Control de guardias mensual'
+  ClientHeight = 153
+  ClientWidth = 385
+  Color = 13428679
+  KeyPreview = True
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.2.0'
+  object SEAnio: TSpinEdit
+    Left = 37
+    Height = 21
+    Top = 40
+    Width = 54
+    MaxValue = 2030
+    MinValue = 2005
+    OnKeyPress = SEAnioKeyPress
+    TabOrder = 0
+    Value = 2010
+  end
+  object CBMes: TComboBox
+    Left = 133
+    Height = 21
+    Top = 40
+    Width = 100
+    ItemHeight = 13
+    ItemIndex = 0
+    Items.Strings = (
+      'ENERO'
+      'FEBRERO'
+      'MARZO'
+      'ABRIL'
+      'MAYO'
+      'JUNIO'
+      'JULIO'
+      'AGOSTO'
+      'SEPTIEMBRE'
+      'OCTUBRE'
+      'NOVIEMBRE'
+      'DICIEMBRE'
+    )
+    OnKeyPress = CBMesKeyPress
+    Style = csDropDownList
+    TabOrder = 1
+    Text = 'ENERO'
+  end
+  object BSalir: TButton
+    Left = 154
+    Height = 25
+    Top = 104
+    Width = 75
+    Caption = 'Salir'
+    OnClick = BSalirClick
+    TabOrder = 3
+  end
+  object Label1: TLabel
+    Left = 38
+    Height = 14
+    Top = 23
+    Width = 26
+    Caption = 'Año:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 134
+    Height = 14
+    Top = 23
+    Width = 27
+    Caption = 'Mes:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BImprimir: TButton
+    Left = 264
+    Height = 38
+    Top = 26
+    Width = 88
+    Caption = 'Imprimir'
+    Font.Style = [fsBold]
+    OnClick = BImprimirClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Bevel1: TBevel
+    Left = 12
+    Height = 73
+    Top = 10
+    Width = 362
+    Shape = bsFrame
+  end
+  object ZQuery: TZQuery
+    Connection = DMod.ZCon
+    SQL.Strings = (
+      'select Cedula, Concat(Apellidos,'', '',Nombres) NomCompl from personal order by NomCompl asc'
+    )
+    Params = <>
+    left = 328
+    top = 88
+  end
+  object frRpt: TfrReport
+    Dataset = frDBDSet
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    left = 8
+    top = 88
+    ReportForm = {
+      19000000
+    }
+  end
+  object frDBDSet: TfrDBDataSet
+    DataSet = ZQuery
+    left = 68
+    top = 88
+  end
+  object ZQrTmp: TZQuery
+    Connection = DMod.ZCon
+    Params = <>
+    left = 276
+    top = 88
+  end
+end
